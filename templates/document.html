@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+
+<h1 class="font-weight-bold">{{book}}</h1>
+<h2 class="font-italic">{{'Chapter ' + chapter +' , ' + 'Verse ' + verse}}</h2>
+<p class="font-weight-light font-italic lead text-info">" {{text}} "</p>
+
+</div>
+{% endblock %}

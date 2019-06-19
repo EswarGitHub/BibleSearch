@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+		<div class="jumbotron">
+	<div class="text-dark">
+		<h1 style="font-family: Georgia, serif;">Search The BIBLE</h1>
+	  <div class="font-italic">
+	  {% from "includes/_formhelpers.html" import render_field %}
+	  <form method="POST" action="">
+	    <div class="form-group">
+	      {{render_field(form.search, class_="form-control")}}
+	    </div>
+	    <p><input type="submit" class="btn btn-primary" value="  Go  "></p>
+	  </form>
+	</div>
+	</div>
+	</div>
+	<div class="container jumbotron">
+			{% for each in results %}
+		 <div class="form-group">
+			<a href = "{{url_for('displayDoc', docname = each)}}"><button type ="button" class="btn btn-outline-dark" >{{each}}</button></a>
+		</div>
+		 {% endfor %}			 
+	</div>
+{% endblock %}
